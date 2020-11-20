@@ -1,0 +1,40 @@
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
+
+<h1 class="text-center mb-4">Welcome to my todolist app</h1>
+<%= render 'layouts/task_form'  %>
+<div class="container">
+  <ul id="tasks-group">
+  <% @categories.each do  |category|%>
+  <li><%= category.title  %></li>
+  <div class="card-<%= category.id %>">
+    <ul id="task-list">
+      <% category.tasks.each do |task|  %>
+      <li id="id-<%= task.id %>" style="text-decoration: line-through;" >
+        <%= task.title  %>
+        <% unless task.deadline.nil? %>
+          , to read: <%= task.deadline.strftime('%D')  %>
+          <%= link_to task_path(task), :method => "delete", data: { confirm: 'Are you sure?', remote: true } do %>
+            <span><i class="fas fa-trash"></i></span>
+          <% end %>
+          <%= check_box_tag :status, 1, task.status, data: { remote: true, url: task_path(task), params: { status: task.status}.to_param, method: "put" }%>
+        <% end %>
+      </li>
+      <% end %>
+    </ul>
+  </div>
+  <% end %>
+  </ul>
+</div>
+
+<div class="container">
+  <div class="row" id="task-image">
+    <% @tasks.each do |task|  %>
+      <div class="card col-3">
+        <% unless task.image.nil? %>
+          <%= image_tag task.image, class: "rounded-circle" %>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+</div>
+

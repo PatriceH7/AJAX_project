@@ -1,0 +1,38 @@
+
+
+<h1 style="text-align: center; ">Email List</h1>
+
+
+ <div style="margin-left: 20%; margin-bottom: 20px;">
+ 	<%= link_to emails_path, :method => "POST",  data: { remote: true} do %>
+	<button type="button" class="btn btn-outline-secondary">Create an email</button>
+	 <% end %> 
+</div>
+
+
+
+<div class="container" style="">
+
+	<div id="title-table" class="row" style="border: solid black 4px;">
+		<div class="col-sm-6">Email List</div>
+		<div class="col-sm-6">Email Selected</div>
+	</div>
+
+	
+	<div class="row" id="main-table">
+		<div id="emailList" class="col-md-6" >
+			<% @emails.each do  |email|%>
+			<div class="row" id="email-cell-<%= email.id%>">
+					<%= link_to email.object, email_path(email), :method => "GET", data: { remote: true} %>
+			</div>
+			<%end%>
+		</div>
+		<div id="emailShow" class="col-md-6">
+	
+		</div>
+	</div>
+
+</div>
+
+
+

@@ -1,0 +1,10 @@
+if ("<%= escape_javascript @task.status%>" == false) {
+	document.getElementById("id-<%= escape_javascript @task.id%>").getElementsByTagName("input")[0].checked = false;
+	document.getElementById("id-<%= escape_javascript @task.id%>").style.color ="red";
+
+}
+else {
+	document.getElementById("<%= escape_javascript @task.id%>").getElementsByTagName("input")[0].checked = true;
+};
+
+

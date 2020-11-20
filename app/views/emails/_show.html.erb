@@ -1,0 +1,13 @@
+<div id="removeShow" >
+<h2><%= @email.object  %></h2> </br>
+<%= @email.body  %>
+<br>
+
+<%= link_to "Delete", email_path(email), method: :delete, data: { remote: true}, class: "btn btn-danger" %>
+
+
+
+<%= link_to "Mark as unread", email_path(email), method: "PUT", data: { remote: true}, class: "btn btn-warning buttonStatus" %>
+
+
+</div>

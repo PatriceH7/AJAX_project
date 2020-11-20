@@ -1,0 +1,10 @@
+if ("<%= j @email.read%>" == false) {
+	document.getElementsByClassName("buttonStatus")[0].innerHTML = "Mark as read";
+	document.getElementById("email-cell-<%= @email.id%>").getElementsByTagName("a")[0].style.color="red";
+} else {
+	document.getElementsByClassName("buttonStatus")[0].innerHTML = "Mark as unread";
+	document.getElementById("email-cell-<%=@email.id%>").getElementsByTagName("a")[0].style.color="green";
+};
+
+
+
