@@ -1,24 +1,6 @@
-# README
+# README for AJAX projet
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Version 2 du projet AJAX
 
-Things you may want to cover:
+En reprenant la base du projet TODOLIST d'hier, on crée un email viewer en utilisant AJAX
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
